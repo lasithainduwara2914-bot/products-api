@@ -21,7 +21,7 @@ public class ProductController {
     }
 
     @PostMapping("/products")
-    public Product addProduct(@RequestBody Product product) {
+    public Product addProduct(@RequestBody DigitalProduct product) {
         return productService.addProduct(product);
     }
     // Delete endpoint
@@ -33,5 +33,10 @@ public class ProductController {
     @GetMapping("/products/search")
     public List<Product> searchProducts(@RequestParam String query) {
         return productService.searchProducts(query);
+    }
+
+    @GetMapping("/products/summaries")
+    public List<String> getSummaries() {
+        return productService.getAllSummaries();
     }
 }

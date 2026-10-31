@@ -1,27 +1,26 @@
 package uk.ac.westminster.products_api;
 
-public class Product {
+public abstract class Product {
     private Long id;
     private String name;
     private double price;
 
-    // Default no-arg constructor
     public Product() {}
 
-    // Full constructor
     public Product(Long id, String name, double price) {
         this.id = id;
         this.name = name;
         this.price = price;
     }
 
-    // Getters
-    public Long getId() { return id; }
-    public String getName() { return name; }
-    public double getPrice() { return price; }
+    public abstract String getSummary();
 
-    // Setters
+    public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
+
+    public String getName() { return name; }
     public void setName(String name) { this.name = name; }
+
+    public double getPrice() { return price; }
     public void setPrice(double price) { this.price = price; }
 }
